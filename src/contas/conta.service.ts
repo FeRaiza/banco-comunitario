@@ -64,4 +64,20 @@ export class ContasService {
   removerConta(id: string): void {
     this.contas = this.contas.filter((conta) => conta.id !== id);
   }
+
+  pagarPorPix(id: string, valor: number): Conta {
+    const conta = this.buscarContaPorId(id);
+    if (!conta.pagarPorPix(valor)) {
+      throw new Error('Saldo insuficiente');
+    }
+    return conta;
+  }
+
+  pagarPorBoleto(id: string, valor: number): Conta {
+    const conta = this.buscarContaPorId(id);
+    if (!conta.pagarPorBoleto(valor)) {
+      throw new Error('Saldo insuficiente');
+    }
+    return conta;
+  }
 }

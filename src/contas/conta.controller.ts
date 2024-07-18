@@ -48,4 +48,14 @@ export class ContasController {
   ): { contaOrigem: Conta; contaDestino: Conta } {
     return this.contasService.transferir(idOrigem, idDestino, valor);
   }
+
+  @Put(':id/pagar-pix')
+  pagarPorPix(@Param('id') id: string, @Body('valor') valor: number) {
+    this.contasService.pagarPorPix(id, valor);
+  }
+
+  @Put(':id/pagar-boleto')
+  pagarPorBoleto(@Param('id') id: string, @Body('valor') valor: number) {
+    this.contasService.pagarPorBoleto(id, valor);
+  }
 }
