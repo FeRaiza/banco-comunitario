@@ -1,21 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CustomerModule } from './cliente/cliente.module';
-import { BankAccountModule } from './contas/conta.module';
-import { ManagerModule } from './gerente/gerente.module';
-import { TransactionsModule } from './transactions/transactions.module';
-// import { Cliente } from './cliente/entities/cliente.entity';
-// import { Conta } from './contas/entities/conta.entity';
-// import { Gerente } from './gerente/entities/gerente.entity';
+import { ClienteModule } from './cliente/cliente.module';
+import { ContaModule } from './contas/conta.module';
+import { TransacoesModule } from './transactions/transactions.module';
+import { GerenteModule } from './gerente/gerente.module';
 
 @Module({
-  imports: [
-    CustomerModule,
-    BankAccountModule,
-    ManagerModule,
-    TransactionsModule,
-  ],
+  imports: [ClienteModule, ContaModule, GerenteModule, TransacoesModule],
   controllers: [AppController],
   providers: [AppService],
 })

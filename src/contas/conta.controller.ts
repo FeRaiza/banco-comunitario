@@ -3,7 +3,6 @@ import { ContasService } from './conta.service';
 import { TipoConta } from 'src/enums/tipoConta.enum';
 import { Conta } from './entities/conta.entity';
 import { ClientesService } from 'src/cliente/cliente.service';
-
 @Controller('contas')
 export class ContasController {
   constructor(
