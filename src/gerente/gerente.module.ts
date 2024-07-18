@@ -6,4 +6,4 @@ import { GerentesController } from './gerente.controller';
   providers: [GerentesService],
   controllers: [GerentesController],
 })
-export class ManagerModule {}
+export class GerenteModule {}

@@ -3,7 +3,6 @@ import { Injectable } from '@nestjs/common';
 import { Conta } from './entities/conta.entity';
 import { v4 as uuidv4 } from 'uuid';
 import { Cliente } from '../cliente/entities/cliente.entity';
-
 @Injectable()
 export class ContasService {
   private contas: Conta[] = [];
